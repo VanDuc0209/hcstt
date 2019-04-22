@@ -1,5 +1,7 @@
 import connectdb as conn
-
+import math
+def sigmoid(x):
+    return (float)(1/(1+math.exp(-x)))
 def setHamphuthuoc(taptiende, train_set):
     phuthuoc = [[]]
     count = 0
@@ -7,7 +9,7 @@ def setHamphuthuoc(taptiende, train_set):
     for tmp in train_set:
         phuthuoc.append([])
         for i in range(len(taptiende)):
-            phuthuoc[count].append(abs(tmp[i] - taptiende[i]))
+            phuthuoc[count].append(sigmoid(abs(tmp[i] - taptiende[i])))
         count += 1
     del phuthuoc[count]
     return phuthuoc

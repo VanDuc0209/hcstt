@@ -1,4 +1,4 @@
-import mysql.connector
+pyhtiimport mysql.connector
 from readData import readDataTrain
 
 mydb = mysql.connector.connect(

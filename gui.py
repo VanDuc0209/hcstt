@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
-import test
+# import test
 def getInfo():
     FFMC = (float)(E1.get())
     DMC = (float)(E2.get())
@@ -18,7 +18,7 @@ def getInfo():
     test.append(RH)
     test.append(wind)
     return test
-top = Tk()
+top = Tk(className='Cảnh báo cháy rừng')
 top.minsize(width=300, height=500)
 top.maxsize(width=300, height=500)
 L1 = Label(top, text="FFMC")
@@ -49,9 +49,11 @@ L7 = Label(top, text="wind")
 L7.pack()
 E7 =Entry(top, bd=5)
 E7.pack()
-B = Button(top, text="submit", command = print(getInfo()))
+B = Button(top, text="submit", command=getInfo)
 B.pack()
 close = Button(top, text='Close', command=top.destroy)
 close.pack()
 top.mainloop()
+
+
 
