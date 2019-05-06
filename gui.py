@@ -1,23 +1,28 @@
 from tkinter import *
 from tkinter import messagebox
-# import test
+from test import result
 def getInfo():
-    FFMC = (float)(E1.get())
-    DMC = (float)(E2.get())
-    DC = (float)(E3.get())
-    ISI = (float)(E4.get())
-    temp = (float)(E5.get())
-    RH = (float)(E6.get())
-    wind = (float)(E7.get())
+    FFMC = (E1.get())
+    DMC = (E2.get())
+    DC = (E3.get())
+    ISI = (E4.get())
+    temp = (E5.get())
+    RH = (E6.get())
+    wind = (E7.get())
     test = []
-    test.append(FFMC)
-    test.append(DMC)
-    test.append(DC)
-    test.append(ISI)
-    test.append(temp)
-    test.append(RH)
-    test.append(wind)
-    return test
+    test.append(float(FFMC))
+    test.append(float(DMC))
+    test.append(float(DC))
+    test.append(float(ISI))
+    test.append(float(temp))
+    test.append(float(RH))
+    test.append(float(wind))
+    ketqua =  result(test)
+    if ketqua == 0:
+        message = 'Rừng không có nguy cơ bị cháy'
+    else:
+        message = 'Rừng có nguy cơ bị cháy'
+    messagebox.showinfo("Kết quả", message)
 top = Tk(className='Cảnh báo cháy rừng')
 top.minsize(width=300, height=500)
 top.maxsize(width=300, height=500)
@@ -49,7 +54,7 @@ L7 = Label(top, text="wind")
 L7.pack()
 E7 =Entry(top, bd=5)
 E7.pack()
-B = Button(top, text="submit", command=getInfo)
+B = Button(top, text="submit",command=getInfo)
 B.pack()
 close = Button(top, text='Close', command=top.destroy)
 close.pack()

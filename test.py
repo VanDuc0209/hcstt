@@ -55,8 +55,13 @@ def readTest():
     wind = float(input())
     test = [FFMC, DMC, DC, ISI, temp, RH, wind]
     return test
-test = readTest()
-phuthuoc0 = setHamPhuThuoc(test, 'class0')
-# print(phuthuoc0)
-phuthuoc1 = setHamPhuThuoc(test, 'class1')
-print(phanlop(phuthuoc0, phuthuoc1))
+# test = readTest()
+def result(test):
+    phuthuoc0 = setHamPhuThuoc(test, 'class0')
+    phuthuoc1 = setHamPhuThuoc(test, 'class1')
+    print(phanlop(phuthuoc0, phuthuoc1))
+    return phanlop(phuthuoc0, phuthuoc1)
+# phuthuoc0 = setHamPhuThuoc(test, 'class0')
+# # print(phuthuoc0)
+# phuthuoc1 = setHamPhuThuoc(test, 'class1')
+# print(phanlop(phuthuoc0, phuthuoc1))
