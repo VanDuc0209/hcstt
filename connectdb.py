@@ -4,7 +4,7 @@ from readData import readDataTrain
 mydb = mysql.connector.connect(
     host = 'localhost',
     user = 'root',
-    passwd = 'duc0209',
+    passwd = '',
     database = 'forest'
 )
 mycursor = mydb.cursor()
